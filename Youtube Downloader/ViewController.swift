@@ -32,7 +32,9 @@ class ViewController: NSViewController {
     
     @IBOutlet weak var choosePath: NSPathControl!
     
+    @IBOutlet weak var splitView: NSSplitView!
     
+    @IBOutlet weak var splitLowerView: NSView!
     
     
     //Radio Buttons Codec Types
@@ -62,6 +64,10 @@ class ViewController: NSViewController {
         fileUrl?.appendPathComponent("Downloads", isDirectory: true)
         choosePath.url = fileUrl
         
+        splitLowerView.isHidden = true;
+        
+        
+        
     }
     
     override var representedObject: Any? {
@@ -78,7 +84,6 @@ class ViewController: NSViewController {
     }
     
 
-    
     
     
     @IBAction func chooseFormat(_ sender: NSButton) {
@@ -110,6 +115,20 @@ class ViewController: NSViewController {
     }
     
     
+    @IBAction func toggleLog(_ sender: Any) {
+        if(splitLowerView.isHidden)
+        {
+            splitLowerView.isHidden = false;
+            splitView.adjustSubviews()
+        }
+        else
+        {
+            splitLowerView.isHidden = true;
+            splitView.adjustSubviews()
+        }
+
+    }
+
     
     
     
@@ -135,9 +154,14 @@ class ViewController: NSViewController {
                 task.arguments = ["-x", "--audio-format", "mp3", "--audio-quality","4", "-o", self.choosePath.stringValue + "/%(title)s.%(ext)s" ,"--ffmpeg-location", self.ffmpegpath, self.urlTextField.stringValue]
                     print("Get the AUDIO!")
                 }
-                else
+                else if(self.format == "mp4")
                 {
                 task.arguments = ["-f", "bestvideo[ext=\(self.format!)]+bestaudio[ext=m4a]/bestvideo+bestaudio", "--merge-output-format", "\(self.format!)", "-o", self.choosePath.stringValue + "/%(title)s.%(ext)s" ,"--ffmpeg-location", self.ffmpegpath, self.urlTextField.stringValue]
+                    print("Get Your Format!: \(self.format)")
+                }
+                else
+                {
+                    task.arguments = ["-f", "bestvideo[ext=\(self.format!)]+bestaudio/bestvideo+bestaudio", "--merge-output-format", "\(self.format!)", "-o", self.choosePath.stringValue + "/%(title)s.%(ext)s" ,"--ffmpeg-location", self.ffmpegpath, self.urlTextField.stringValue]
                     print("Get Your Format!: \(self.format)")
                 }
             }
