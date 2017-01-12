@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,11 +13,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="Youtube Downloader" id="1Xt-HY-uBw">
+                            <menuItem title="Pillager" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Youtube Downloader" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Pillager" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About Youtube Downloader" id="5kV-Vb-QxS">
+                                        <menuItem title="About Pillager" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -30,7 +31,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide Youtube Downloader" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide Pillager" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -48,7 +49,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit Youtube Downloader" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit Pillager" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -282,7 +283,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="Youtube Downloader Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="Pillager Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -296,7 +297,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Youtube_Downloader" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Pillager" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-68" y="-76"/>
@@ -305,7 +306,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Youtube Downloader" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="utilityWindow" id="IQv-IB-iLA">
+                    <window key="window" title="🏴 Pillager 🏴" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="utilityWindow" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <rect key="contentRect" x="555" y="292" width="800" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -321,13 +322,13 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Youtube_Downloader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Pillager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="598" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="598" height="548"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFE-Yz-6bV">
-                                <rect key="frame" x="20" y="536" width="560" height="19"/>
+                                <rect key="frame" x="20" y="484" width="560" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="left" placeholderString="https://www.youtube.de" drawsBackground="YES" id="1rN-Z3-aAO">
                                     <font key="font" metaFont="system" size="15"/>
@@ -336,7 +337,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTR-oF-jRp">
-                                <rect key="frame" x="20" y="563" width="37" height="17"/>
+                                <rect key="frame" x="20" y="511" width="37" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="URL:" id="Vfr-gQ-5Gb">
                                     <font key="font" metaFont="system"/>
@@ -344,98 +345,89 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wE-be-sDa">
-                                <rect key="frame" x="20" y="325" width="477" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" title="/Users/Philipp/Downloads" placeholderString="Path" drawsBackground="YES" id="DBt-Bc-MGG">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIh-g2-HMw">
-                                <rect key="frame" x="18" y="355" width="64" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Save to: " id="zyD-YW-VL8">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QPx-m1-VdV">
-                                <rect key="frame" x="495" y="319" width="91" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Choose..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="D3A-jN-lBP">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="browseFile:" target="XfG-lQ-9wD" id="WNV-qw-5K3"/>
-                                </connections>
-                            </button>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQZ-WM-fCD">
-                                <rect key="frame" x="20" y="413" width="558" height="96"/>
+                                <rect key="frame" x="20" y="361" width="558" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bzm-aE-vO0">
-                                        <rect key="frame" x="-1" y="79" width="50" height="18"/>
+                                    <box fixedFrame="YES" title="Format" translatesAutoresizingMaskIntoConstraints="NO" id="0q6-k6-12e">
+                                        <rect key="frame" x="-3" y="-4" width="177" height="114"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="radio" title="mp4" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="b1C-3P-m3y">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="chooseFormat:" target="XfG-lQ-9wD" id="91X-aH-hYe"/>
-                                        </connections>
-                                    </button>
-                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oft-8e-tmT">
-                                        <rect key="frame" x="-1" y="57" width="59" height="18"/>
+                                        <view key="contentView" id="E6g-m1-jSO">
+                                            <rect key="frame" x="2" y="2" width="173" height="97"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <button identifier="mp4" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bzm-aE-vO0">
+                                                    <rect key="frame" x="7" y="73" width="50" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="radio" title="mp4" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="b1C-3P-m3y">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="chooseFormat:" target="XfG-lQ-9wD" id="91X-aH-hYe"/>
+                                                    </connections>
+                                                </button>
+                                                <button identifier="webm" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oft-8e-tmT">
+                                                    <rect key="frame" x="7" y="51" width="59" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="radio" title="webm" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="9Bn-5u-ccj">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="chooseFormat:" target="XfG-lQ-9wD" id="wX3-Nl-j0A"/>
+                                                    </connections>
+                                                </button>
+                                                <button identifier="flv" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dzv-FB-kMU">
+                                                    <rect key="frame" x="7" y="29" width="37" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="radio" title="flv" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="NbW-k0-njt">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="chooseFormat:" target="XfG-lQ-9wD" id="02w-YE-9IB"/>
+                                                    </connections>
+                                                </button>
+                                                <button identifier="mp3" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rlj-bX-Tbp">
+                                                    <rect key="frame" x="7" y="7" width="129" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="radio" title="mp3 (Audio only) " bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="b1g-2t-V6K">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="chooseFormat:" target="XfG-lQ-9wD" id="VuK-P0-j2C"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                    </box>
+                                    <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="BNY-EE-zQy">
+                                        <rect key="frame" x="277" y="10" width="5" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="radio" title="webm" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="9Bn-5u-ccj">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="chooseFormat:" target="XfG-lQ-9wD" id="wX3-Nl-j0A"/>
-                                        </connections>
-                                    </button>
-                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dzv-FB-kMU">
-                                        <rect key="frame" x="-1" y="35" width="37" height="18"/>
+                                    </box>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIh-g2-HMw">
+                                        <rect key="frame" x="358" y="93" width="64" height="17"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="radio" title="flv" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="NbW-k0-njt">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Save to: " id="zyD-YW-VL8">
                                             <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="chooseFormat:" target="XfG-lQ-9wD" id="02w-YE-9IB"/>
-                                        </connections>
-                                    </button>
-                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rlj-bX-Tbp">
-                                        <rect key="frame" x="-1" y="13" width="129" height="18"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zy0-4f-DXP">
+                                        <rect key="frame" x="357" y="61" width="193" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="radio" title="mp3 (Audio only) " bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="b1g-2t-V6K">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <pathCell key="cell" selectable="YES" editable="YES" alignment="left" pathStyle="popUp" id="7me-ap-d9K">
                                             <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="chooseFormat:" target="XfG-lQ-9wD" id="VuK-P0-j2C"/>
-                                        </connections>
-                                    </button>
+                                            <color key="backgroundColor" red="0.69803921568627447" green="0.84313725490196079" blue="1" alpha="0.29840004280821919" colorSpace="deviceRGB"/>
+                                        </pathCell>
+                                    </pathControl>
                                 </subviews>
                             </customView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NUi-1b-4VA">
-                                <rect key="frame" x="445" y="351" width="135" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="roundTextured" title="Download" bezelStyle="texturedRounded" alignment="center" borderStyle="border" sound="Funk" inset="2" id="Hel-T8-4x8">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system" size="15"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="downloadvideo:" target="XfG-lQ-9wD" id="EJq-C5-Gmy"/>
-                                </connections>
-                            </button>
                             <button toolTip="Check avaliable Formats for URL" verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o4D-4J-rWR">
-                                <rect key="frame" x="521" y="552" width="39" height="38"/>
+                                <rect key="frame" x="521" y="500" width="39" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="round" bezelStyle="circular" image="NSRefreshTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" id="qgu-lj-CeQ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -445,8 +437,35 @@
                                     <action selector="checkAvailableFormats:" target="XfG-lQ-9wD" id="JqX-yg-7G8"/>
                                 </connections>
                             </button>
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="73b-mk-uFA">
+                                <rect key="frame" x="557" y="508" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YYw-hk-OdP">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" doubleValue="22" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="dCg-il-50F">
+                                <rect key="frame" x="510" y="512" width="16" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </progressIndicator>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" controlSize="small" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="EUR-tZ-dCU">
+                                <rect key="frame" x="20" y="336" width="415" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </progressIndicator>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NUi-1b-4VA">
+                                <rect key="frame" x="443" y="329" width="135" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="roundTextured" title="Download" bezelStyle="texturedRounded" alignment="center" borderStyle="border" sound="Pop" inset="2" id="Hel-T8-4x8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="15"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="downloadvideo:" target="XfG-lQ-9wD" id="EJq-C5-Gmy"/>
+                                </connections>
+                            </button>
                             <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" scrollerKnobStyle="dark" translatesAutoresizingMaskIntoConstraints="NO" id="tMZ-Uj-Ose">
-                                <rect key="frame" x="20" y="11" width="558" height="307"/>
+                                <rect key="frame" x="20" y="14" width="558" height="307"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <clipView key="contentView" ambiguous="YES" copiesOnScroll="NO" id="TJX-7E-7fp">
                                     <rect key="frame" x="1" y="1" width="541" height="305"/>
@@ -472,33 +491,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="73b-mk-uFA">
-                                <rect key="frame" x="557" y="560" width="25" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YYw-hk-OdP">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" doubleValue="22" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="dCg-il-50F">
-                                <rect key="frame" x="510" y="564" width="16" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </progressIndicator>
-                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" controlSize="small" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="EUR-tZ-dCU">
-                                <rect key="frame" x="88" y="356" width="349" height="12"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </progressIndicator>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="choosePath" destination="Zy0-4f-DXP" id="WRJ-wg-8YC"/>
                         <outlet property="downloadButton" destination="NUi-1b-4VA" id="F7m-4J-GXb"/>
-                        <outlet property="filename_field" destination="4wE-be-sDa" id="gFk-Xz-G1o"/>
                         <outlet property="flvRadio" destination="Dzv-FB-kMU" id="nzL-rd-Yzc"/>
-                        <outlet property="mainview" destination="m2S-Jp-Qdl" id="Af7-QF-iZE"/>
-                        <outlet property="mp3" destination="rlj-bX-Tbp" id="eCW-KH-a11"/>
                         <outlet property="mp3Radio" destination="rlj-bX-Tbp" id="hNw-qT-BAS"/>
                         <outlet property="mp4Radio" destination="Bzm-aE-vO0" id="5jL-AE-ge5"/>
-                        <outlet property="outputText" destination="tMZ-Uj-Ose" id="fFA-pX-7D4"/>
                         <outlet property="progressIndicator" destination="dCg-il-50F" id="nyf-4P-xJU"/>
                         <outlet property="progressPie" destination="EUR-tZ-dCU" id="ycm-IX-GmC"/>
                         <outlet property="refresh" destination="o4D-4J-rWR" id="mvs-P7-4cc"/>
@@ -511,11 +511,11 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="iv7-T2-ipB"/>
             </objects>
-            <point key="canvasLocation" x="889" y="441"/>
+            <point key="canvasLocation" x="889" y="415"/>
         </scene>
     </scenes>
     <resources>
         <image name="NSRefreshTemplate" width="11" height="15"/>
-        <sound name="Funk"/>
+        <sound name="Pop"/>
     </resources>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17029A181E27A6CB000B9FEE /* Automator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17029A171E27A6CB000B9FEE /* Automator.framework */; };
 		17FE3C941E254A4F007F51E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3C931E254A4F007F51E8 /* AppDelegate.swift */; };
 		17FE3C961E254A4F007F51E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3C951E254A4F007F51E8 /* ViewController.swift */; };
 		17FE3C981E254A4F007F51E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17FE3C971E254A4F007F51E8 /* Assets.xcassets */; };
@@ -15,7 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		17FE3C901E254A4F007F51E8 /* Youtube Downloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Youtube Downloader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17029A171E27A6CB000B9FEE /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
+		17FE3C901E254A4F007F51E8 /* Pillager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pillager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FE3C931E254A4F007F51E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17FE3C951E254A4F007F51E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		17FE3C971E254A4F007F51E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -29,24 +31,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17029A181E27A6CB000B9FEE /* Automator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17029A161E27A6CB000B9FEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17029A171E27A6CB000B9FEE /* Automator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		17FE3C871E254A4F007F51E8 = {
 			isa = PBXGroup;
 			children = (
 				17FE3C921E254A4F007F51E8 /* Youtube Downloader */,
 				17FE3C911E254A4F007F51E8 /* Products */,
+				17029A161E27A6CB000B9FEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		17FE3C911E254A4F007F51E8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				17FE3C901E254A4F007F51E8 /* Youtube Downloader.app */,
+				17FE3C901E254A4F007F51E8 /* Pillager.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,9 +79,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		17FE3C8F1E254A4F007F51E8 /* Youtube Downloader */ = {
+		17FE3C8F1E254A4F007F51E8 /* Pillager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17FE3C9F1E254A4F007F51E8 /* Build configuration list for PBXNativeTarget "Youtube Downloader" */;
+			buildConfigurationList = 17FE3C9F1E254A4F007F51E8 /* Build configuration list for PBXNativeTarget "Pillager" */;
 			buildPhases = (
 				17FE3C8C1E254A4F007F51E8 /* Sources */,
 				17FE3C8D1E254A4F007F51E8 /* Frameworks */,
@@ -79,9 +91,9 @@
 			);
 			dependencies = (
 			);
-			name = "Youtube Downloader";
+			name = Pillager;
 			productName = "Youtube Downloader";
-			productReference = 17FE3C901E254A4F007F51E8 /* Youtube Downloader.app */;
+			productReference = 17FE3C901E254A4F007F51E8 /* Pillager.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -101,7 +113,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 17FE3C8B1E254A4F007F51E8 /* Build configuration list for PBXProject "Youtube Downloader" */;
+			buildConfigurationList = 17FE3C8B1E254A4F007F51E8 /* Build configuration list for PBXProject "Pillager" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -114,7 +126,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				17FE3C8F1E254A4F007F51E8 /* Youtube Downloader */,
+				17FE3C8F1E254A4F007F51E8 /* Pillager */,
 			);
 		};
 /* End PBXProject section */
@@ -254,6 +266,7 @@
 				DEVELOPMENT_TEAM = 685HJXAYC5;
 				INFOPLIST_FILE = "Youtube Downloader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "rocks.dippel.Youtube-Downloader";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -268,6 +281,7 @@
 				DEVELOPMENT_TEAM = 685HJXAYC5;
 				INFOPLIST_FILE = "Youtube Downloader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "rocks.dippel.Youtube-Downloader";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -277,7 +291,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		17FE3C8B1E254A4F007F51E8 /* Build configuration list for PBXProject "Youtube Downloader" */ = {
+		17FE3C8B1E254A4F007F51E8 /* Build configuration list for PBXProject "Pillager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17FE3C9D1E254A4F007F51E8 /* Debug */,
@@ -286,13 +300,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17FE3C9F1E254A4F007F51E8 /* Build configuration list for PBXNativeTarget "Youtube Downloader" */ = {
+		17FE3C9F1E254A4F007F51E8 /* Build configuration list for PBXNativeTarget "Pillager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17FE3CA01E254A4F007F51E8 /* Debug */,
 				17FE3CA11E254A4F007F51E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

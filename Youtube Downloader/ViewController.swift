@@ -11,13 +11,14 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    let youtubedlpath : String = "/usr/local/Cellar/youtube-dl/2016.08.06/bin/youtube-dl";
+    let youtubedlpath : String = "/usr/local/Cellar/youtube-dl/2016.08.06/bin/youtube-dl"
+    let ffmpegpath : String = "/usr/local/Cellar/ffmpeg/3.1.1_1/bin/ffmpeg"
     
     var format : String?
     
     @IBOutlet weak var urlTextField: NSTextField!
     
-    @IBOutlet weak var filename_field: NSTextField!
+   
     
     @IBOutlet var responseText: NSTextView!
     
@@ -28,6 +29,10 @@ class ViewController: NSViewController {
     @IBOutlet weak var progressPie: NSProgressIndicator!
     
     @IBOutlet weak var refresh: NSButton!
+    
+    @IBOutlet weak var choosePath: NSPathControl!
+    
+    
     
     
     //Radio Buttons Codec Types
@@ -52,6 +57,11 @@ class ViewController: NSViewController {
         mp3Radio.isEnabled = false
         flvRadio.isEnabled = false
         webmRadio.isEnabled = false
+        
+        var fileUrl = Foundation.URL(string: NSHomeDirectory())
+        fileUrl?.appendPathComponent("Downloads", isDirectory: true)
+        choosePath.url = fileUrl
+        
     }
     
     override var representedObject: Any? {
@@ -63,54 +73,31 @@ class ViewController: NSViewController {
     
     func textchanged(notif : NSNotification)
     {
-        print("HALLO")
+        
         checkAvailableFormats(refresh)
     }
     
 
     
     
-    @IBAction func browseFile(_ sender: Any) {
-        
-        let dialog = NSOpenPanel();
-        
-        dialog.title                   = "Choose a Path for Download";
-        dialog.showsResizeIndicator    = true;
-        dialog.showsHiddenFiles        = false;
-        dialog.canChooseDirectories    = true;
-        dialog.canCreateDirectories    = true;
-        dialog.allowsMultipleSelection = false;
-        dialog.canChooseFiles          = false;
-        
-        if (dialog.runModal() == NSModalResponseOK) {
-            let result = dialog.url // Pathname of the file
-            
-            if (result != nil) {
-                let path = result!.path
-                filename_field.stringValue = path
-            }
-        } else {
-            // User clicked on "Cancel"
-            return
-            
-        }
-    }
     
     @IBAction func chooseFormat(_ sender: NSButton) {
         
-        if(sender.title == "mp4")
+    
+        
+        if(sender.identifier == "mp4")
         {
             format = "mp4";
         }
-        else if(sender.title == "webm")
+        else if(sender.identifier == "webm")
         {
             format = "webm"
         }
-        else if(sender.title == "flv")
+        else if(sender.identifier == "flv")
         {
             format = "flv"
         }
-        else if(sender.title == "mp3 (Audio only) ")
+        else if(sender.identifier == "mp3")
         {
             format = "mp3"
         }
@@ -136,17 +123,28 @@ class ViewController: NSViewController {
         
         
         DispatchQueue.global(qos: .background).async {
-            print("This is run on the background queue")
+        
             self.progressIndicator.startAnimation(self)
             
             let task = Process()
             task.launchPath = self.youtubedlpath
             if(self.format != nil){
-                task.arguments = ["-f", "137+140", "-o", self.filename_field.stringValue + "/%(title)s.%(ext)s" ,self.urlTextField.stringValue]
+                
+                if(self.format == "mp3")
+                {
+                task.arguments = ["-x", "--audio-format", "mp3", "--audio-quality","4", "-o", self.choosePath.stringValue + "/%(title)s.%(ext)s" ,"--ffmpeg-location", self.ffmpegpath, self.urlTextField.stringValue]
+                    print("Get the AUDIO!")
+                }
+                else
+                {
+                task.arguments = ["-f", "bestvideo[ext=\(self.format!)]+bestaudio[ext=m4a]/bestvideo+bestaudio", "--merge-output-format", "\(self.format!)", "-o", self.choosePath.stringValue + "/%(title)s.%(ext)s" ,"--ffmpeg-location", self.ffmpegpath, self.urlTextField.stringValue]
+                    print("Get Your Format!: \(self.format)")
+                }
             }
             else
             {
-                task.arguments = ["-o", self.filename_field.stringValue + "/%(title)s.%(ext)s" ,self.urlTextField.stringValue]
+                task.arguments = ["-o", self.choosePath.stringValue + "/%(title)s.%(ext)s","--ffmpeg-location" , self.ffmpegpath ,self.urlTextField.stringValue]
+                print("Get the Best we HAVE!")
             }
             let pipe = Pipe()
             task.standardOutput = pipe
@@ -203,7 +201,7 @@ class ViewController: NSViewController {
             task.waitUntilExit()
             
             DispatchQueue.main.async {
-                print("This is run on the main queue, after the previous code in outer block")
+                
                 
                 self.progressIndicator.stopAnimation(self)
                 

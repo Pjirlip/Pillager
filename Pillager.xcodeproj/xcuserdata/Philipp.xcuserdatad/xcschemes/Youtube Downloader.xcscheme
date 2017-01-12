@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "17FE3C8F1E254A4F007F51E8"
-               BuildableName = "Youtube Downloader.app"
-               BlueprintName = "Youtube Downloader"
-               ReferencedContainer = "container:Youtube Downloader.xcodeproj">
+               BuildableName = "Pillager.app"
+               BlueprintName = "Pillager"
+               ReferencedContainer = "container:Pillager.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17FE3C8F1E254A4F007F51E8"
-            BuildableName = "Youtube Downloader.app"
-            BlueprintName = "Youtube Downloader"
-            ReferencedContainer = "container:Youtube Downloader.xcodeproj">
+            BuildableName = "Pillager.app"
+            BlueprintName = "Pillager"
+            ReferencedContainer = "container:Pillager.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17FE3C8F1E254A4F007F51E8"
-            BuildableName = "Youtube Downloader.app"
-            BlueprintName = "Youtube Downloader"
-            ReferencedContainer = "container:Youtube Downloader.xcodeproj">
+            BuildableName = "Pillager.app"
+            BlueprintName = "Pillager"
+            ReferencedContainer = "container:Pillager.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17FE3C8F1E254A4F007F51E8"
-            BuildableName = "Youtube Downloader.app"
-            BlueprintName = "Youtube Downloader"
-            ReferencedContainer = "container:Youtube Downloader.xcodeproj">
+            BuildableName = "Pillager.app"
+            BlueprintName = "Pillager"
+            ReferencedContainer = "container:Pillager.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
