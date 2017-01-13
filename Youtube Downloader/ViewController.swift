@@ -66,8 +66,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
         cellView.textField!.stringValue = celldata.name
         if(celldata.image != nil){
-            
-            print(cellView.imageView!.image)
+        
             
             cellView.imageView?.image = celldata.image
         }

@@ -432,7 +432,7 @@
                                                                                     </connections>
                                                                                 </button>
                                                                                 <button identifier="mp3" translatesAutoresizingMaskIntoConstraints="NO" id="rlj-bX-Tbp">
-                                                                                    <rect key="frame" x="7" y="16" width="130" height="18"/>
+                                                                                    <rect key="frame" x="7" y="16" width="129" height="18"/>
                                                                                     <buttonCell key="cell" type="radio" title="mp3 (Audio only) " bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="b1g-2t-V6K">
                                                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                                         <font key="font" metaFont="system"/>
@@ -496,6 +496,14 @@
                                                             </progressIndicator>
                                                             <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" controlSize="small" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="EUR-tZ-dCU">
                                                                 <rect key="frame" x="4" y="25" width="354" height="12"/>
+                                                                <contentFilters>
+                                                                    <ciFilter name="CIHueAdjust">
+                                                                        <configuration>
+                                                                            <real key="inputAngle" value="5"/>
+                                                                            <null key="inputImage"/>
+                                                                        </configuration>
+                                                                    </ciFilter>
+                                                                </contentFilters>
                                                             </progressIndicator>
                                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NUi-1b-4VA">
                                                                 <rect key="frame" x="366" y="18" width="135" height="25"/>
@@ -612,7 +620,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="373" height="497"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <size key="intercellSpacing" width="3" height="2"/>
-                                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                             <tableColumns>
                                                                 <tableColumn width="370" minWidth="40" maxWidth="1000" id="M9u-tP-umG">
@@ -633,22 +641,30 @@
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
                                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVN-hT-hY0">
-                                                                                    <rect key="frame" x="120" y="3" width="249" height="67"/>
-                                                                                    <textFieldCell key="cell" lineBreakMode="charWrapping" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="9FC-tj-h7r">
+                                                                                    <rect key="frame" x="122" y="0.0" width="245" height="72"/>
+                                                                                    <textFieldCell key="cell" lineBreakMode="charWrapping" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" borderStyle="border" alignment="left" title="Table View Cell" drawsBackground="YES" id="9FC-tj-h7r">
                                                                                         <font key="font" metaFont="system"/>
-                                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="deviceWhite"/>
                                                                                     </textFieldCell>
                                                                                 </textField>
                                                                                 <progressIndicator wantsLayer="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="pho-zF-9WN">
                                                                                     <rect key="frame" x="146" y="77" width="221" height="20"/>
+                                                                                    <contentFilters>
+                                                                                        <ciFilter name="CIHueAdjust">
+                                                                                            <configuration>
+                                                                                                <real key="inputAngle" value="21"/>
+                                                                                                <null key="inputImage"/>
+                                                                                            </configuration>
+                                                                                        </ciFilter>
+                                                                                    </contentFilters>
                                                                                 </progressIndicator>
                                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CYC-bp-zMG">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="117" height="100"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="111" id="i3G-Xg-Ti3"/>
                                                                                     </constraints>
-                                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="axesIndependently" imageFrameStyle="button" image="NSFolder" id="IZ6-jB-CEL"/>
+                                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="axesIndependently" imageFrameStyle="groove" image="NSFolder" id="IZ6-jB-CEL"/>
                                                                                 </imageView>
                                                                                 <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="fMq-Yg-gBG">
                                                                                     <rect key="frame" x="122" y="79" width="16" height="16"/>
@@ -656,7 +672,7 @@
                                                                             </subviews>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="bottom" secondItem="CYC-bp-zMG" secondAttribute="bottom" constant="3" id="2CD-44-lPJ"/>
-                                                                                <constraint firstItem="GVN-hT-hY0" firstAttribute="top" secondItem="pho-zF-9WN" secondAttribute="bottom" constant="8" id="5ae-kV-FG7"/>
+                                                                                <constraint firstItem="GVN-hT-hY0" firstAttribute="top" secondItem="pho-zF-9WN" secondAttribute="bottom" constant="6" id="5ae-kV-FG7"/>
                                                                                 <constraint firstItem="fMq-Yg-gBG" firstAttribute="leading" secondItem="CYC-bp-zMG" secondAttribute="trailing" constant="8" id="9NZ-5y-hvq"/>
                                                                                 <constraint firstItem="GVN-hT-hY0" firstAttribute="leading" secondItem="CYC-bp-zMG" secondAttribute="trailing" constant="8" id="GD3-rG-902"/>
                                                                                 <constraint firstItem="pho-zF-9WN" firstAttribute="top" secondItem="Dsl-7t-MEu" secondAttribute="top" constant="4" id="On8-Bg-haZ"/>
@@ -664,7 +680,7 @@
                                                                                 <constraint firstItem="pho-zF-9WN" firstAttribute="leading" secondItem="fMq-Yg-gBG" secondAttribute="trailing" constant="8" id="cuu-2x-tT0"/>
                                                                                 <constraint firstAttribute="bottom" secondItem="pho-zF-9WN" secondAttribute="bottom" constant="78" id="dHQ-ct-z1d"/>
                                                                                 <constraint firstItem="CYC-bp-zMG" firstAttribute="leading" secondItem="Dsl-7t-MEu" secondAttribute="leading" constant="3" id="dRK-Qt-Xfc"/>
-                                                                                <constraint firstItem="CYC-bp-zMG" firstAttribute="bottom" secondItem="GVN-hT-hY0" secondAttribute="bottom" id="eTz-B8-OzX"/>
+                                                                                <constraint firstItem="CYC-bp-zMG" firstAttribute="bottom" secondItem="GVN-hT-hY0" secondAttribute="bottom" constant="-3" id="eTz-B8-OzX"/>
                                                                                 <constraint firstItem="CYC-bp-zMG" firstAttribute="top" secondItem="Dsl-7t-MEu" secondAttribute="top" constant="3" id="jfh-bK-WLg"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="pho-zF-9WN" secondAttribute="trailing" constant="3" id="nBN-Le-Nqk"/>
                                                                                 <constraint firstItem="pho-zF-9WN" firstAttribute="trailing" secondItem="GVN-hT-hY0" secondAttribute="trailing" id="sOY-T2-DmS"/>
