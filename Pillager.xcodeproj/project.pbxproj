@@ -12,6 +12,7 @@
 		17898AB11E29016600A08339 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = 17898AB01E29016600A08339 /* ffmpeg */; };
 		17898AB41E2902B300A08339 /* ffprobe in Resources */ = {isa = PBXBuildFile; fileRef = 17898AB21E2902B300A08339 /* ffprobe */; };
 		17898AB51E2902B300A08339 /* ffserver in Resources */ = {isa = PBXBuildFile; fileRef = 17898AB31E2902B300A08339 /* ffserver */; };
+		17898AB71E292B5800A08339 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17898AB61E292B5800A08339 /* CellData.swift */; };
 		17FE3C941E254A4F007F51E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3C931E254A4F007F51E8 /* AppDelegate.swift */; };
 		17FE3C961E254A4F007F51E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3C951E254A4F007F51E8 /* ViewController.swift */; };
 		17FE3C981E254A4F007F51E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17FE3C971E254A4F007F51E8 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		17898AB01E29016600A08339 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		17898AB21E2902B300A08339 /* ffprobe */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffprobe; sourceTree = "<group>"; };
 		17898AB31E2902B300A08339 /* ffserver */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffserver; sourceTree = "<group>"; };
+		17898AB61E292B5800A08339 /* CellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
 		17FE3C901E254A4F007F51E8 /* Pillager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pillager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FE3C931E254A4F007F51E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17FE3C951E254A4F007F51E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				17FE3C991E254A4F007F51E8 /* Main.storyboard */,
 				17FE3C9C1E254A4F007F51E8 /* Info.plist */,
 				17FE3CA41E269801007F51E8 /* TextFieldControll.swift */,
+				17898AB61E292B5800A08339 /* CellData.swift */,
 			);
 			path = "Youtube Downloader";
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				17FE3C961E254A4F007F51E8 /* ViewController.swift in Sources */,
 				17FE3C941E254A4F007F51E8 /* AppDelegate.swift in Sources */,
 				17FE3CA51E269801007F51E8 /* TextFieldControll.swift in Sources */,
+				17898AB71E292B5800A08339 /* CellData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

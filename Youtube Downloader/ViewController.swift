@@ -9,21 +9,17 @@
 import Cocoa
 
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
     
     
     
     let bundle = Bundle.main
     var ffmpegpath : String = ""
     var youtubedlpath : String = ""
-    
-    
     var format : String?
     
     @IBOutlet weak var urlTextField: NSTextField!
-    
-   
-    
+
     @IBOutlet var responseText: NSTextView!
     
     @IBOutlet weak var downloadButton: NSButton!
@@ -48,12 +44,53 @@ class ViewController: NSViewController {
     @IBOutlet weak var flvRadio: NSButton!
     @IBOutlet weak var mp3Radio: NSButton!
     
+    @IBOutlet weak var tableView: NSTableView!
 
+    
+    //Cell Data
+    var objects: NSMutableArray! = NSMutableArray()
+    
+    
+    //MARK: -- Table View
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return self.objects.count
+    }
+    
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        
+        
+        let cellView = tableView.make(withIdentifier: "cell", owner: self) as! NSTableCellView
+        
+        let celldata = self.objects.object(at: row) as! CellData
+        
+        cellView.textField!.stringValue = celldata.name
+        
+        return cellView
+    }
+    
+    func selectionShouldChange(in tableView: NSTableView) -> Bool {
+        return false
+    }
+    
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        
+        if(self.tableView.numberOfSelectedRows > 0){
+        let selectetItem = self.objects.object(at: self.tableView.selectedRow) as! String
+        
+        print(selectetItem)
+        
+            self.tableView.deselectRow(self.tableView.selectedRow)
+        }
+    }
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.reloadData()
         
         youtubedlpath = bundle.path(forResource: "youtube-dl", ofType: "")!
         ffmpegpath = bundle.path(forResource: "ffmpeg", ofType: "")!
@@ -73,14 +110,29 @@ class ViewController: NSViewController {
         choosePath.url = fileUrl
         
         splitLowerView.isHidden = true;
-        
+    
         
         
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        
+        let window = self.view.window
+        var rec: NSRect = (self.view.window?.frame)!
+        
+        rec.size = CGSize(width: 916, height: 290)
+        window?.setFrame(rec, display: true, animate: true)
+
+    }
+    
+    
+    
     override var representedObject: Any? {
         didSet {
             // Update the view, if already loaded.
+            
+            
             
         }
     }
@@ -96,7 +148,7 @@ class ViewController: NSViewController {
     
     @IBAction func chooseFormat(_ sender: NSButton) {
         
-    
+        
         
         if(sender.identifier == "mp4")
         {
@@ -124,15 +176,29 @@ class ViewController: NSViewController {
     
     
     @IBAction func toggleLog(_ sender: Any) {
+        
+        let window = self.view.window
+        var rec: NSRect = (self.view.window?.frame)!
+        
+        
+        
         if(splitLowerView.isHidden)
         {
+            rec.size = CGSize(width: 916, height: 526)
             splitLowerView.isHidden = false;
             splitView.adjustSubviews()
+            //window?.setFrame(NSRect(x: x, y: y, width: 400, height: 400), display: true, animate: true)
+            window?.setFrame(rec, display: true, animate: true)
         }
         else
         {
+            rec.size = CGSize(width: 916, height: 290)
+
+            
             splitLowerView.isHidden = true;
             splitView.adjustSubviews()
+            window?.setFrame(rec, display: true, animate: true)
+            
         }
 
     }
@@ -142,6 +208,47 @@ class ViewController: NSViewController {
     
     
     @IBAction func downloadvideo(_ sender: Any) {
+        
+        
+        
+        var videotitel = ""
+        
+        
+        
+        DispatchQueue.global(qos: .background).async {
+            
+            let task = Process()
+            task.launchPath = self.youtubedlpath
+            task.arguments = ["--get-title", self.urlTextField.stringValue]
+            let pipe = Pipe()
+            task.standardOutput = pipe
+            task.standardError = pipe
+            
+            self.progressIndicator.startAnimation(self)
+            let outHandle = pipe.fileHandleForReading
+            outHandle.readabilityHandler =
+                { pipe in
+                    if let line = String(data: pipe.availableData, encoding: String.Encoding.utf8)
+                    {
+                        videotitel = line
+                    }
+                    else{
+                        
+                        print("Error decoding data: \(pipe.availableData)")
+                    }
+                }
+            task.launch()
+            task.waitUntilExit()
+            
+            DispatchQueue.main.async
+                {
+                    let newCell = CellData(name: videotitel)
+                    
+                    self.objects.add(newCell)
+                    self.tableView.reloadData()
+            }
+            
+        }
         
         self.responseText.string! = "";
         self.progressPie.minValue = 0.0
