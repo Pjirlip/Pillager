@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		17029A181E27A6CB000B9FEE /* Automator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17029A171E27A6CB000B9FEE /* Automator.framework */; };
+		17898AAF1E28FE5600A08339 /* youtube-dl in Resources */ = {isa = PBXBuildFile; fileRef = 17898AAE1E28FE5600A08339 /* youtube-dl */; };
+		17898AB11E29016600A08339 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = 17898AB01E29016600A08339 /* ffmpeg */; };
+		17898AB41E2902B300A08339 /* ffprobe in Resources */ = {isa = PBXBuildFile; fileRef = 17898AB21E2902B300A08339 /* ffprobe */; };
+		17898AB51E2902B300A08339 /* ffserver in Resources */ = {isa = PBXBuildFile; fileRef = 17898AB31E2902B300A08339 /* ffserver */; };
 		17FE3C941E254A4F007F51E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3C931E254A4F007F51E8 /* AppDelegate.swift */; };
 		17FE3C961E254A4F007F51E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3C951E254A4F007F51E8 /* ViewController.swift */; };
 		17FE3C981E254A4F007F51E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17FE3C971E254A4F007F51E8 /* Assets.xcassets */; };
@@ -17,6 +21,10 @@
 
 /* Begin PBXFileReference section */
 		17029A171E27A6CB000B9FEE /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
+		17898AAE1E28FE5600A08339 /* youtube-dl */ = {isa = PBXFileReference; lastKnownFileType = file; path = "youtube-dl"; sourceTree = "<group>"; };
+		17898AB01E29016600A08339 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
+		17898AB21E2902B300A08339 /* ffprobe */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffprobe; sourceTree = "<group>"; };
+		17898AB31E2902B300A08339 /* ffserver */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffserver; sourceTree = "<group>"; };
 		17FE3C901E254A4F007F51E8 /* Pillager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pillager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FE3C931E254A4F007F51E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17FE3C951E254A4F007F51E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +57,10 @@
 		17FE3C871E254A4F007F51E8 = {
 			isa = PBXGroup;
 			children = (
+				17898AAE1E28FE5600A08339 /* youtube-dl */,
+				17898AB01E29016600A08339 /* ffmpeg */,
+				17898AB21E2902B300A08339 /* ffprobe */,
+				17898AB31E2902B300A08339 /* ffserver */,
 				17FE3C921E254A4F007F51E8 /* Youtube Downloader */,
 				17FE3C911E254A4F007F51E8 /* Products */,
 				17029A161E27A6CB000B9FEE /* Frameworks */,
@@ -137,7 +149,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				17FE3C981E254A4F007F51E8 /* Assets.xcassets in Resources */,
+				17898AAF1E28FE5600A08339 /* youtube-dl in Resources */,
 				17FE3C9B1E254A4F007F51E8 /* Main.storyboard in Resources */,
+				17898AB41E2902B300A08339 /* ffprobe in Resources */,
+				17898AB11E29016600A08339 /* ffmpeg in Resources */,
+				17898AB51E2902B300A08339 /* ffserver in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

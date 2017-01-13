@@ -11,8 +11,12 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    let youtubedlpath : String = "/usr/local/Cellar/youtube-dl/2016.08.06/bin/youtube-dl"
-    let ffmpegpath : String = "/usr/local/Cellar/ffmpeg/3.1.1_1/bin/ffmpeg"
+    
+    
+    let bundle = Bundle.main
+    var ffmpegpath : String = ""
+    var youtubedlpath : String = ""
+    
     
     var format : String?
     
@@ -49,6 +53,10 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        youtubedlpath = bundle.path(forResource: "youtube-dl", ofType: "")!
+        ffmpegpath = bundle.path(forResource: "ffmpeg", ofType: "")!
         
         
         // Do any additional setup after loading the view.

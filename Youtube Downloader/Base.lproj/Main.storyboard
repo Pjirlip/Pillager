@@ -417,44 +417,46 @@
                                                         </view>
                                                     </box>
                                                     <box horizontalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="BNY-EE-zQy">
-                                                        <rect key="frame" x="277" y="10" width="46" height="115"/>
+                                                        <rect key="frame" x="256" y="10" width="46" height="115"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="42" id="GwL-EF-B6Q"/>
                                                         </constraints>
                                                     </box>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIh-g2-HMw">
-                                                        <rect key="frame" x="358" y="112" width="64" height="17"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="60" id="G1z-Zi-L9O"/>
-                                                        </constraints>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Save to: " id="zyD-YW-VL8">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zy0-4f-DXP">
-                                                        <rect key="frame" x="357" y="80" width="193" height="26"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="187" id="NTS-ma-xeI"/>
-                                                        </constraints>
-                                                        <pathCell key="cell" selectable="YES" editable="YES" alignment="left" pathStyle="popUp" id="7me-ap-d9K">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="backgroundColor" red="0.69803921568627447" green="0.84313725490196079" blue="1" alpha="0.29840004280821919" colorSpace="deviceRGB"/>
-                                                        </pathCell>
-                                                    </pathControl>
+                                                    <box title="Save to:" translatesAutoresizingMaskIntoConstraints="NO" id="ymT-QO-Coa">
+                                                        <rect key="frame" x="384" y="6" width="177" height="123"/>
+                                                        <view key="contentView" id="TZM-ez-n2M">
+                                                            <rect key="frame" x="2" y="2" width="173" height="106"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zy0-4f-DXP">
+                                                                    <rect key="frame" x="5" y="76" width="163" height="26"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="157" id="NTS-ma-xeI"/>
+                                                                    </constraints>
+                                                                    <pathCell key="cell" selectable="YES" editable="YES" alignment="left" pathStyle="popUp" id="7me-ap-d9K">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="backgroundColor" red="0.69803921568627447" green="0.84313725490196079" blue="1" alpha="0.40100599315068491" colorSpace="deviceRGB"/>
+                                                                    </pathCell>
+                                                                </pathControl>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="Zy0-4f-DXP" firstAttribute="top" secondItem="TZM-ez-n2M" secondAttribute="top" constant="6" id="Ce9-BH-Pyl"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Zy0-4f-DXP" secondAttribute="trailing" constant="8" id="aEd-su-rTq"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </box>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="Zy0-4f-DXP" secondAttribute="trailing" constant="11" id="53t-k9-P0v"/>
-                                                    <constraint firstItem="dIh-g2-HMw" firstAttribute="leading" secondItem="Zy0-4f-DXP" secondAttribute="leading" id="9wg-tf-DjP"/>
+                                                    <constraint firstItem="BNY-EE-zQy" firstAttribute="centerX" secondItem="bQZ-WM-fCD" secondAttribute="centerX" id="1YJ-cb-bDp"/>
                                                     <constraint firstItem="BNY-EE-zQy" firstAttribute="top" secondItem="bQZ-WM-fCD" secondAttribute="top" constant="9" id="CyB-QC-sd6"/>
-                                                    <constraint firstItem="0q6-k6-12e" firstAttribute="top" secondItem="dIh-g2-HMw" secondAttribute="top" id="O9i-II-AZz"/>
-                                                    <constraint firstItem="dIh-g2-HMw" firstAttribute="leading" secondItem="BNY-EE-zQy" secondAttribute="trailing" constant="39" id="U9K-Nx-b78"/>
+                                                    <constraint firstItem="ymT-QO-Coa" firstAttribute="top" secondItem="bQZ-WM-fCD" secondAttribute="top" constant="5" id="J3z-gu-b1x"/>
+                                                    <constraint firstItem="ymT-QO-Coa" firstAttribute="leading" secondItem="BNY-EE-zQy" secondAttribute="trailing" constant="87" id="Psd-CL-RNY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ymT-QO-Coa" secondAttribute="trailing" id="SOm-qP-pjK"/>
                                                     <constraint firstItem="0q6-k6-12e" firstAttribute="bottom" secondItem="BNY-EE-zQy" secondAttribute="bottom" id="WHO-Yz-Tbg"/>
                                                     <constraint firstItem="0q6-k6-12e" firstAttribute="top" secondItem="bQZ-WM-fCD" secondAttribute="top" constant="5" id="XX1-lW-1vb"/>
                                                     <constraint firstItem="0q6-k6-12e" firstAttribute="leading" secondItem="bQZ-WM-fCD" secondAttribute="leading" id="cV0-Bu-KSU"/>
+                                                    <constraint firstItem="BNY-EE-zQy" firstAttribute="bottom" secondItem="ymT-QO-Coa" secondAttribute="bottom" id="ig5-tZ-9No"/>
                                                     <constraint firstItem="BNY-EE-zQy" firstAttribute="centerY" secondItem="bQZ-WM-fCD" secondAttribute="centerY" id="pjF-4C-2fC"/>
-                                                    <constraint firstItem="Zy0-4f-DXP" firstAttribute="top" secondItem="dIh-g2-HMw" secondAttribute="bottom" constant="8" symbolic="YES" id="rTd-Qv-7gH"/>
                                                 </constraints>
                                             </customView>
                                             <button toolTip="Check avaliable Formats for URL" verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o4D-4J-rWR">
