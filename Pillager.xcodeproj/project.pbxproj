@@ -17,7 +17,6 @@
 		17FE3C961E254A4F007F51E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3C951E254A4F007F51E8 /* ViewController.swift */; };
 		17FE3C981E254A4F007F51E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17FE3C971E254A4F007F51E8 /* Assets.xcassets */; };
 		17FE3C9B1E254A4F007F51E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FE3C991E254A4F007F51E8 /* Main.storyboard */; };
-		17FE3CA51E269801007F51E8 /* TextFieldControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3CA41E269801007F51E8 /* TextFieldControll.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +32,6 @@
 		17FE3C971E254A4F007F51E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17FE3C9A1E254A4F007F51E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17FE3C9C1E254A4F007F51E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17FE3CA41E269801007F51E8 /* TextFieldControll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldControll.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +83,6 @@
 				17FE3C971E254A4F007F51E8 /* Assets.xcassets */,
 				17FE3C991E254A4F007F51E8 /* Main.storyboard */,
 				17FE3C9C1E254A4F007F51E8 /* Info.plist */,
-				17FE3CA41E269801007F51E8 /* TextFieldControll.swift */,
 				17898AB61E292B5800A08339 /* CellData.swift */,
 			);
 			path = "Youtube Downloader";
@@ -169,7 +166,6 @@
 			files = (
 				17FE3C961E254A4F007F51E8 /* ViewController.swift in Sources */,
 				17FE3C941E254A4F007F51E8 /* AppDelegate.swift in Sources */,
-				17FE3CA51E269801007F51E8 /* TextFieldControll.swift in Sources */,
 				17898AB71E292B5800A08339 /* CellData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

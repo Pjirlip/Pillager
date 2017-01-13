@@ -48,7 +48,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 
     
     //Cell Data
-    var objects: NSMutableArray! = NSMutableArray()
+    var objects : NSMutableArray! = NSMutableArray()
     
     
     //MARK: -- Table View
@@ -65,6 +65,12 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         let celldata = self.objects.object(at: row) as! CellData
         
         cellView.textField!.stringValue = celldata.name
+        if(celldata.image != nil){
+            
+            print(cellView.imageView!.image)
+            
+            cellView.imageView?.image = celldata.image
+        }
         
         return cellView
     }
@@ -212,8 +218,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
         
         var videotitel = ""
+        var thumbnailurl = ""
         
-        
+        var indexOfNewElement = 0
         
         DispatchQueue.global(qos: .background).async {
             
@@ -243,9 +250,68 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             DispatchQueue.main.async
                 {
                     let newCell = CellData(name: videotitel)
-                    
                     self.objects.add(newCell)
-                    self.tableView.reloadData()
+                    indexOfNewElement = self.objects.index(of: newCell)
+                }
+            
+            DispatchQueue.global(qos: .background).async {
+                
+                let thumbnailtask = Process()
+                thumbnailtask.launchPath = self.youtubedlpath
+                thumbnailtask.arguments = ["-q", "--get-thumbnail", self.urlTextField.stringValue]
+                let thumbnailpipe = Pipe()
+                thumbnailtask.standardOutput = thumbnailpipe
+                thumbnailtask.standardError = thumbnailpipe
+                
+                let thumbnailOutHandle = thumbnailpipe.fileHandleForReading
+                thumbnailOutHandle.readabilityHandler =
+                    {
+                        thumbnailpipe in
+                        if let thumbnailline = String(data: thumbnailpipe.availableData, encoding: String.Encoding.utf8)
+                        {
+                            print(thumbnailline)
+                            
+                            if(thumbnailline.contains("http") == true){
+                                thumbnailurl = thumbnailline
+                            }
+                        }
+                        else
+                        {
+                        print("Error decoding data: \(thumbnailpipe.availableData)")
+                        }
+                }
+                thumbnailtask.launch()
+                thumbnailtask.waitUntilExit()
+                
+                DispatchQueue.main.async
+                    {
+                        
+                        
+                    print("ThumbnailURL: " + thumbnailurl)
+                    let trimmedString = thumbnailurl.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                        
+                        
+                        
+                    let url = URL(string: trimmedString)
+                    
+                    print("URL: " + (url?.absoluteString)!)
+
+                    
+                        
+                        if(url != nil)
+                        {
+                            print("URL: " + (url?.absoluteString)!)
+                            print("Hallo")
+                            let data = try? Data(contentsOf: url!)
+                            let image = NSImage(data: data!)
+                            
+                            (self.objects[indexOfNewElement] as! CellData).image = image
+                 
+                            
+                        }
+                        self.tableView.reloadData()
+                }
+                
             }
             
         }

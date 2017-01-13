@@ -398,7 +398,7 @@
                                                                     <box title="Format" translatesAutoresizingMaskIntoConstraints="NO" id="0q6-k6-12e">
                                                                         <rect key="frame" x="3" y="1" width="189" height="123"/>
                                                                         <view key="contentView" id="E6g-m1-jSO">
-                                                                            <rect key="frame" x="2" y="2" width="185" height="106"/>
+                                                                            <rect key="frame" x="2" y="2" width="184.5" height="106"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
                                                                                 <button identifier="mp4" translatesAutoresizingMaskIntoConstraints="NO" id="Bzm-aE-vO0">
@@ -432,7 +432,7 @@
                                                                                     </connections>
                                                                                 </button>
                                                                                 <button identifier="mp3" translatesAutoresizingMaskIntoConstraints="NO" id="rlj-bX-Tbp">
-                                                                                    <rect key="frame" x="7" y="16" width="129" height="18"/>
+                                                                                    <rect key="frame" x="7" y="16" width="130" height="18"/>
                                                                                     <buttonCell key="cell" type="radio" title="mp3 (Audio only) " bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="b1g-2t-V6K">
                                                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                                         <font key="font" metaFont="system"/>
@@ -648,7 +648,7 @@
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="94" id="i3G-Xg-Ti3"/>
                                                                                     </constraints>
-                                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="photo" id="IZ6-jB-CEL"/>
+                                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="axesIndependently" imageFrameStyle="button" image="NSFolder" id="IZ6-jB-CEL"/>
                                                                                 </imageView>
                                                                                 <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="fMq-Yg-gBG">
                                                                                     <rect key="frame" x="111" y="79" width="16" height="16"/>
@@ -670,6 +670,7 @@
                                                                                 <constraint firstItem="pho-zF-9WN" firstAttribute="trailing" secondItem="GVN-hT-hY0" secondAttribute="trailing" id="sOY-T2-DmS"/>
                                                                             </constraints>
                                                                             <connections>
+                                                                                <outlet property="imageView" destination="CYC-bp-zMG" id="7bw-og-8SR"/>
                                                                                 <outlet property="textField" destination="GVN-hT-hY0" id="X67-Qd-aSp"/>
                                                                             </connections>
                                                                         </tableCellView>
@@ -739,6 +740,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="NSFolder" width="32" height="32"/>
         <image name="NSRefreshTemplate" width="11" height="15"/>
         <sound name="Pop"/>
     </resources>
