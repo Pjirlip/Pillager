@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		17029A181E27A6CB000B9FEE /* Automator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17029A171E27A6CB000B9FEE /* Automator.framework */; };
+		170D9B421E2D434C009A5394 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170D9B411E2D434C009A5394 /* WindowController.swift */; };
+		170D9B441E2D46D7009A5394 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170D9B431E2D46D7009A5394 /* TableCell.swift */; };
 		17898AAF1E28FE5600A08339 /* youtube-dl in Resources */ = {isa = PBXBuildFile; fileRef = 17898AAE1E28FE5600A08339 /* youtube-dl */; };
 		17898AB11E29016600A08339 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = 17898AB01E29016600A08339 /* ffmpeg */; };
 		17898AB41E2902B300A08339 /* ffprobe in Resources */ = {isa = PBXBuildFile; fileRef = 17898AB21E2902B300A08339 /* ffprobe */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		17029A171E27A6CB000B9FEE /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
+		170D9B411E2D434C009A5394 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		170D9B431E2D46D7009A5394 /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		17898AAE1E28FE5600A08339 /* youtube-dl */ = {isa = PBXFileReference; lastKnownFileType = file; path = "youtube-dl"; sourceTree = "<group>"; };
 		17898AB01E29016600A08339 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		17898AB21E2902B300A08339 /* ffprobe */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffprobe; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				17FE3C991E254A4F007F51E8 /* Main.storyboard */,
 				17FE3C9C1E254A4F007F51E8 /* Info.plist */,
 				17898AB61E292B5800A08339 /* CellData.swift */,
+				170D9B411E2D434C009A5394 /* WindowController.swift */,
+				170D9B431E2D46D7009A5394 /* TableCell.swift */,
 			);
 			path = "Youtube Downloader";
 			sourceTree = "<group>";
@@ -164,7 +170,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				170D9B441E2D46D7009A5394 /* TableCell.swift in Sources */,
 				17FE3C961E254A4F007F51E8 /* ViewController.swift in Sources */,
+				170D9B421E2D434C009A5394 /* WindowController.swift in Sources */,
 				17FE3C941E254A4F007F51E8 /* AppDelegate.swift in Sources */,
 				17898AB71E292B5800A08339 /* CellData.swift in Sources */,
 			);

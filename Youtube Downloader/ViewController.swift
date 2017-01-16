@@ -26,7 +26,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
     
-    @IBOutlet weak var progressPie: NSProgressIndicator!
+    @IBOutlet weak var mainProgressBar: NSProgressIndicator!
     
     @IBOutlet weak var refresh: NSButton!
     
@@ -60,7 +60,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
         
-        let cellView = tableView.make(withIdentifier: "cell", owner: self) as! NSTableCellView
+        let cellView = tableView.make(withIdentifier: "cell", owner: self) as! TableCell
         
         let celldata = self.objects.object(at: row) as! CellData
         
@@ -70,6 +70,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             
             cellView.imageView?.image = celldata.image
         }
+        
+        cellView.progressBar.doubleValue = celldata.progress
         
         return cellView
     }
@@ -116,6 +118,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
         splitLowerView.isHidden = true;
     
+        self.mainProgressBar.minValue = 0.0
+        self.mainProgressBar.maxValue = 100.0
+        self.mainProgressBar.doubleValue = 0.0
         
         
     }
@@ -293,8 +298,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                         
                     let url = URL(string: trimmedString)
                     
-                    print("URL: " + (url?.absoluteString)!)
-
+                    
                     
                         
                         if(url != nil)
@@ -316,9 +320,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         }
         
         self.responseText.string! = "";
-        self.progressPie.minValue = 0.0
-        self.progressPie.maxValue = 100.0
-        self.progressPie.doubleValue = 0.0
+        
         
         
         DispatchQueue.global(qos: .background).async {
@@ -386,8 +388,13 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                                         
                                         if(myDouble != nil)
                                         {
+                                            (self.objects[indexOfNewElement] as! CellData).progress = myDouble!
                                             
-                                            self.progressPie.doubleValue = myDouble!
+                                            self.tableView.reloadData()
+                                            
+                                            self.updateMainBrogressbar()
+                                            
+                                            
                                         }
                                     }
                                 }
@@ -561,6 +568,26 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             print("invalid regex: \(error.localizedDescription)")
             return []
         }
+    }
+    
+    func updateMainBrogressbar()
+    {
+        var sum = 0.0
+        
+        for x in objects
+        {
+          sum += (x as! CellData).progress
+        }
+        
+        sum = sum/Double(objects.count)
+        
+        mainProgressBar.doubleValue = sum
+        
+        if(mainProgressBar.doubleValue >= 100)
+        {
+        NSSound.init(named: "Ping")?.play()
+        }
+        
     }
     
     

@@ -13,7 +13,7 @@ class CellData: NSObject {
     
     var name : String = ""
     var image: NSImage? = nil
-    
+    var progress: Double = 0.0
     
     init(name: String) {
         super.init()
