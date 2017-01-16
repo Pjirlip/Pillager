@@ -10,6 +10,14 @@ import Cocoa
 
 class TableCell: NSTableCellView {
 
+  
+    @IBOutlet weak var text: NSTextField!
+    
+    @IBOutlet weak var image: NSImageView!
+    
+    @IBOutlet weak var progressBar: NSProgressIndicator!
+    
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 
