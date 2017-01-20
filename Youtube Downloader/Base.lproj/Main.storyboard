@@ -666,6 +666,17 @@
                                                                                     </constraints>
                                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="axesIndependently" imageFrameStyle="groove" image="PillagerSquare" id="IZ6-jB-CEL"/>
                                                                                 </imageView>
+                                                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fpQ-xx-JBf">
+                                                                                    <rect key="frame" x="310" y="81" width="21" height="16"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                    <buttonCell key="cell" type="inline" bezelStyle="inline" image="NSTrashFull" imagePosition="above" alignment="center" imageScaling="axesIndependently" inset="2" id="XKo-Mt-Kb7">
+                                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                                        <font key="font" metaFont="smallSystemBold"/>
+                                                                                    </buttonCell>
+                                                                                    <connections>
+                                                                                        <action selector="cancleTask:" target="Dsl-7t-MEu" id="SY5-Ic-83a"/>
+                                                                                    </connections>
+                                                                                </button>
                                                                             </subviews>
                                                                             <constraints>
                                                                                 <constraint firstItem="RGs-2i-S2l" firstAttribute="leading" secondItem="Dsl-7t-MEu" secondAttribute="leading" id="Vjq-tN-L04"/>
@@ -676,6 +687,7 @@
                                                                                 <constraint firstItem="GVN-hT-hY0" firstAttribute="leading" secondItem="CYC-bp-zMG" secondAttribute="trailing" constant="4" id="ph7-9j-7Fx"/>
                                                                             </constraints>
                                                                             <connections>
+                                                                                <outlet property="cancelButton" destination="fpQ-xx-JBf" id="EmP-NO-BYd"/>
                                                                                 <outlet property="image" destination="CYC-bp-zMG" id="Vnw-D9-ALr"/>
                                                                                 <outlet property="imageView" destination="CYC-bp-zMG" id="7bw-og-8SR"/>
                                                                                 <outlet property="progressBar" destination="RGs-2i-S2l" id="8h3-CU-oh2"/>
@@ -751,6 +763,7 @@
     </scenes>
     <resources>
         <image name="NSRefreshTemplate" width="11" height="15"/>
+        <image name="NSTrashFull" width="32" height="32"/>
         <image name="PillagerSquare" width="214" height="214"/>
         <sound name="Pop"/>
     </resources>

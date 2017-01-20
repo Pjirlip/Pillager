@@ -15,9 +15,20 @@ class CellData: NSObject {
     var image: NSImage? = nil
     var progress: Double = 0.0
     
+    var index : Int? = nil
+    
+    var task: Process! = nil
+    
     init(name: String) {
         super.init()
         self.name = name
     }
+    
+    override init()
+    {
+      super.init()
+    }
+    
+    
     
 }

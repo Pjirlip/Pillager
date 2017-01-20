@@ -51,6 +51,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     var objects : NSMutableArray! = NSMutableArray()
     
     
+    var tasks : NSMutableArray! = NSMutableArray()
+    
+    
     //MARK: -- Table View
     
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -65,13 +68,29 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         let celldata = self.objects.object(at: row) as! CellData
         
         cellView.textField!.stringValue = celldata.name
+        
         if(celldata.image != nil){
         
-            
-            cellView.imageView?.image = celldata.image
+            if(cellView.imageView?.image != #imageLiteral(resourceName: "cancel"))
+            {
+                cellView.imageView?.image = celldata.image
+            }
         }
         
         cellView.progressBar.doubleValue = celldata.progress
+        
+        
+        if(celldata.task != nil)
+        {
+            cellView.task = celldata.task as Process
+        }
+        
+        cellView.index = celldata.index
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.setTo100), name: NSNotification.Name.init("TimeToUpdate") , object: cellView)
+        
+        
+        cellView.identifier = String(drand48())
         
         return cellView
     }
@@ -94,6 +113,27 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     
     
     
+    func setTo100(notification : NSNotification)
+    {
+    
+        if((notification.object as! TableCell).index != nil)
+        {
+            let index = (notification.object as! TableCell).index!
+        
+            (self.objects[index] as! CellData).progress = 100
+            
+            (self.objects[index] as! CellData).name = "Task Interrupted!"
+            
+            (self.objects[index] as! CellData).image = #imageLiteral(resourceName: "cancel")
+            
+            
+        }
+    updateMainBrogressbar()
+    self.tableView.reloadData()
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -106,6 +146,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         // Do any additional setup after loading the view.
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.textchanged), name: NSNotification.Name.NSControlTextDidChange, object: urlTextField)
+        
+        
         
         mp4Radio.isEnabled = false
         mp3Radio.isEnabled = false
@@ -219,14 +261,18 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     
     @IBAction func downloadvideo(_ sender: Any) {
         
-        
+        let newCell = CellData()
+        self.objects.add(newCell)
         
         var videotitel = ""
         var thumbnailurl = ""
         
         var indexOfNewElement = 0
+        indexOfNewElement = self.objects.index(of: newCell)
         
         DispatchQueue.global(qos: .background).async {
+          
+            
             
             let task = Process()
             task.launchPath = self.youtubedlpath
@@ -234,6 +280,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             let pipe = Pipe()
             task.standardOutput = pipe
             task.standardError = pipe
+            
+            
+            
             
             self.progressIndicator.startAnimation(self)
             let outHandle = pipe.fileHandleForReading
@@ -253,9 +302,10 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             
             DispatchQueue.main.async
                 {
-                    let newCell = CellData(name: videotitel)
-                    self.objects.add(newCell)
-                    indexOfNewElement = self.objects.index(of: newCell)
+                    
+                    newCell.name = videotitel
+                    
+                    self.tableView.reloadData()
                 }
             
             DispatchQueue.global(qos: .background).async {
@@ -329,6 +379,16 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             
             let task = Process()
             task.launchPath = self.youtubedlpath
+            
+            
+            ///
+            
+            
+         
+            (self.objects[indexOfNewElement] as! CellData).task = task
+            (self.objects[indexOfNewElement] as! CellData).index = indexOfNewElement
+            
+            
             if(self.format != nil){
                 
                 if(self.format == "mp3")
@@ -358,6 +418,16 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             
             let outHandle = pipe.fileHandleForReading
             
+            task.terminationHandler =
+                {
+                    task in
+                    DispatchQueue.main.async(execute: {
+                        outHandle.closeFile()
+                        
+                    })
+            
+            }
+            
             outHandle.readabilityHandler =
                 { pipe in
                     if let line = String(data: pipe.availableData, encoding: String.Encoding.utf8)
@@ -370,6 +440,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                             {
                                 self.responseText.string = self.responseText.string! + line
                                 
+                              
                                 
                                 let indexofpercent = line.characters.index(of: "%")
                                 if(indexofpercent != nil) {
@@ -394,10 +465,18 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                                             
                                             self.updateMainBrogressbar()
                                             
-                                            
                                         }
                                     }
                                 }
+                                
+                                if(line.contains("already been downloaded"))
+                                {
+                                    (self.objects[indexOfNewElement] as! CellData).progress = 100;
+                                    (self.objects[indexOfNewElement] as! CellData).name = (self.objects[indexOfNewElement] as! CellData).name + "-- already been downloaded"
+                                    
+                                    self.tableView.reloadData()
+                                }
+
                                 
                                 
                                 
@@ -409,7 +488,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                     }
             }
             task.launch()
-            task.waitUntilExit()
+            //task.waitUntilExit()
+            
             
             DispatchQueue.main.async {
                 
@@ -469,6 +549,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                             
                         }
                     }
+                    
                     
                     DispatchQueue.main.async {
                         
