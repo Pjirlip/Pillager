@@ -17,6 +17,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     var ffmpegpath : String = ""
     var youtubedlpath : String = ""
     var format : String?
+    var refreshTimer : Timer?
+    
+    
     
     @IBOutlet weak var urlTextField: NSTextField!
     @IBOutlet var responseText: NSTextView!
@@ -130,9 +133,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         youtubedlpath = bundle.path(forResource: "youtube-dl", ofType: "")!
         ffmpegpath = bundle.path(forResource: "ffmpeg", ofType: "")!
         
-        
-        // Do any additional setup after loading the view.
-        
         NotificationCenter.default.addObserver(self, selector: #selector(self.textchanged), name: NSNotification.Name.NSControlTextDidChange, object: urlTextField)
         
         
@@ -179,6 +179,30 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     func textchanged(notif : NSNotification)
     {
         
+        mp4Radio.isEnabled = false;
+        webmRadio.isEnabled = false;
+        flvRadio.isEnabled = false;
+        mp3Radio.isEnabled = false;
+        self.progressIndicator.startAnimation(self)
+
+        
+        
+        if refreshTimer == nil
+        {
+            refreshTimer = Timer.scheduledTimer(timeInterval: TimeInterval(1), target: self, selector: #selector(ViewController.timedRefresh), userInfo: nil, repeats: false)
+        }
+        else
+        {
+            refreshTimer?.invalidate()
+            refreshTimer = nil
+            refreshTimer = Timer.scheduledTimer(timeInterval: TimeInterval(1), target: self, selector: #selector(ViewController.timedRefresh), userInfo: nil, repeats: false)
+            
+        }
+        
+    }
+    
+    func timedRefresh()
+    {
         checkAvailableFormats(refresh)
     }
     
@@ -346,8 +370,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                             let image = NSImage(data: data!)
                             
                             (self.objects[indexOfNewElement] as! CellData).image = image
-                 
-                            
                         }
                         self.tableView.reloadData()
                 }
@@ -595,9 +617,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                         }
 
                         
-                        
-                        
-                        
                     }
                     
                     
@@ -617,8 +636,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                     
                 }
         }
-        task.launch()
-        task.waitUntilExit()
+        task.launch();
+        //task.waitUntilExit();
         
         
         
