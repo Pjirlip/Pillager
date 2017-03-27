@@ -130,8 +130,30 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
         self.tableView.reloadData()
         
+        if bundle.path(forResource: "youtube-dl", ofType: "") != nil {
+        
         youtubedlpath = bundle.path(forResource: "youtube-dl", ofType: "")!
-        ffmpegpath = bundle.path(forResource: "ffmpeg", ofType: "")!
+        }
+            else {
+        let alert = NSAlert.init()
+        alert.messageText = "You need the Youtube-dl Binary"
+        alert.informativeText = "Please add the Youtube-dl Binary in 'exec' group. Youtube-dl should deliver with source code. Please load Source Code again."
+        alert.addButton(withTitle: "OK")
+        alert.runModal()
+        exit(-1)
+        }
+        
+        if bundle.path(forResource: "ffmpeg", ofType: "") != nil{
+            ffmpegpath = bundle.path(forResource: "ffmpeg", ofType: "")!
+        } else
+        {
+            let alert = NSAlert.init()
+            alert.messageText = "You need the FFmpeg Binary"
+            alert.informativeText = "Please add the FFmpeg Binary in 'exec' group. Look at README explanation for more details."
+            alert.addButton(withTitle: "OK")
+            alert.runModal()
+            exit(-1)
+        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.textchanged), name: NSNotification.Name.NSControlTextDidChange, object: urlTextField)
         
