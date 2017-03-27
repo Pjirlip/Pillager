@@ -19,21 +19,13 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     var format : String?
     
     @IBOutlet weak var urlTextField: NSTextField!
-
     @IBOutlet var responseText: NSTextView!
-    
     @IBOutlet weak var downloadButton: NSButton!
-    
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
-    
     @IBOutlet weak var mainProgressBar: NSProgressIndicator!
-    
     @IBOutlet weak var refresh: NSButton!
-    
     @IBOutlet weak var choosePath: NSPathControl!
-    
     @IBOutlet weak var splitView: NSSplitView!
-    
     @IBOutlet weak var splitLowerView: NSView!
     
     
@@ -49,13 +41,10 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     
     //Cell Data
     var objects : NSMutableArray! = NSMutableArray()
-    
-    
     var tasks : NSMutableArray! = NSMutableArray()
     
     
     //MARK: -- Table View
-    
     func numberOfRows(in tableView: NSTableView) -> Int {
         return self.objects.count
     }
@@ -64,7 +53,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
         
         let cellView = tableView.make(withIdentifier: "cell", owner: self) as! TableCell
-        
         let celldata = self.objects.object(at: row) as! CellData
         
         cellView.textField!.stringValue = celldata.name
@@ -169,7 +157,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        
         let window = self.view.window
         var rec: NSRect = (self.view.window?.frame)!
         

@@ -20,7 +20,6 @@ class TableCell: NSTableCellView {
     @IBOutlet weak var progressBar: NSProgressIndicator!
     
     var task : Process? = nil
-    
     var index : Int? = nil
     
     override func draw(_ dirtyRect: NSRect) {
@@ -33,8 +32,6 @@ class TableCell: NSTableCellView {
         
         if(task != nil)
         {
-        
-    
         
             while(task?.isRunning)!
             {

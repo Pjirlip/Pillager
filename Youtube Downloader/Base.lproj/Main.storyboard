@@ -346,6 +346,10 @@
                                                         <subviews>
                                                             <textField focusRingType="none" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFE-Yz-6bV">
                                                                 <rect key="frame" x="4" y="192" width="538" height="19"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="19" id="SWb-5w-AJF"/>
+                                                                    <constraint firstAttribute="width" constant="538" id="Twv-hD-L4d"/>
+                                                                </constraints>
                                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="left" placeholderString="https://www.youtube.de" drawsBackground="YES" id="1rN-Z3-aAO">
                                                                     <font key="font" metaFont="system" size="15"/>
                                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -541,16 +545,21 @@
                                                             <constraint firstAttribute="trailing" secondItem="MFE-Yz-6bV" secondAttribute="trailing" constant="20" id="HH5-cP-e9h"/>
                                                             <constraint firstItem="EUR-tZ-dCU" firstAttribute="leading" secondItem="BXt-Gn-95f" secondAttribute="leading" constant="4" id="Hic-kk-RaQ"/>
                                                             <constraint firstItem="EUR-tZ-dCU" firstAttribute="top" secondItem="bQZ-WM-fCD" secondAttribute="bottom" constant="13" id="KAQ-eB-ixs"/>
+                                                            <constraint firstAttribute="trailing" secondItem="MFE-Yz-6bV" secondAttribute="trailing" constant="20" id="KTf-Sz-OIg"/>
                                                             <constraint firstItem="MFE-Yz-6bV" firstAttribute="top" secondItem="o4D-4J-rWR" secondAttribute="bottom" constant="4" id="Kmh-m6-yHo"/>
                                                             <constraint firstItem="o4D-4J-rWR" firstAttribute="top" secondItem="BXt-Gn-95f" secondAttribute="top" constant="14" id="ZZk-MF-N94"/>
+                                                            <constraint firstItem="MFE-Yz-6bV" firstAttribute="leading" secondItem="BXt-Gn-95f" secondAttribute="leading" constant="4" id="aCD-kV-x8v"/>
                                                             <constraint firstItem="o4D-4J-rWR" firstAttribute="leading" secondItem="dCg-il-50F" secondAttribute="trailing" constant="8" id="d9Z-Bt-jae"/>
                                                             <constraint firstItem="EUR-tZ-dCU" firstAttribute="leading" secondItem="BXt-Gn-95f" secondAttribute="leading" constant="4" id="dkv-ZX-aOF"/>
                                                             <constraint firstAttribute="bottom" secondItem="NUi-1b-4VA" secondAttribute="bottom" constant="20" id="hBS-uF-OBT"/>
+                                                            <constraint firstItem="MFE-Yz-6bV" firstAttribute="top" secondItem="o4D-4J-rWR" secondAttribute="bottom" constant="4" id="kAW-Mj-sMd"/>
                                                             <constraint firstItem="MFE-Yz-6bV" firstAttribute="leading" secondItem="BXt-Gn-95f" secondAttribute="leading" constant="4" id="lMm-uF-MBW"/>
+                                                            <constraint firstAttribute="width" constant="562" id="nng-rg-cPu"/>
                                                             <constraint firstAttribute="trailing" secondItem="o4D-4J-rWR" secondAttribute="trailing" constant="20" id="no4-D7-RLd"/>
                                                             <constraint firstItem="bQZ-WM-fCD" firstAttribute="centerX" secondItem="Ixc-5u-qR4" secondAttribute="centerX" id="o3h-T4-zGx"/>
                                                             <constraint firstItem="NUi-1b-4VA" firstAttribute="leading" secondItem="EUR-tZ-dCU" secondAttribute="trailing" constant="8" id="odl-oQ-A1z"/>
                                                             <constraint firstAttribute="bottom" secondItem="Ixc-5u-qR4" secondAttribute="bottom" id="pRn-Mc-ehV"/>
+                                                            <constraint firstAttribute="height" constant="255" id="q2v-yF-ghE"/>
                                                             <constraint firstItem="NUi-1b-4VA" firstAttribute="top" secondItem="bQZ-WM-fCD" secondAttribute="bottom" constant="8" symbolic="YES" id="suS-qr-aux"/>
                                                             <constraint firstAttribute="trailing" secondItem="MFE-Yz-6bV" secondAttribute="trailing" constant="20" id="td8-NW-uCI"/>
                                                             <constraint firstItem="MFE-Yz-6bV" firstAttribute="top" secondItem="o4D-4J-rWR" secondAttribute="bottom" constant="4" id="vsN-QY-khI"/>
