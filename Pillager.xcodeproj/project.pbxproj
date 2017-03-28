@@ -134,8 +134,8 @@
 				TargetAttributes = {
 					17FE3C8F1E254A4F007F51E8 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 685HJXAYC5;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 467Q73MNPU;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -294,9 +294,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 685HJXAYC5;
+				DEVELOPMENT_TEAM = 467Q73MNPU;
 				INFOPLIST_FILE = "Youtube Downloader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -310,9 +310,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 685HJXAYC5;
+				DEVELOPMENT_TEAM = 467Q73MNPU;
 				INFOPLIST_FILE = "Youtube Downloader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
