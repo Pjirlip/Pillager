@@ -36,4 +36,4 @@ If you don't have FFmpeg or want to build it manually yourself, here is a little
 ## Disclaimer
 I don't give any warranty as explained in the License.
 
-Don't download any Videos you are not allowed to download with this. Respect the law and the rights of others. It is at your own discretion for what you use the software, therefore I do not assume any liability for any right-wing use of the software.
+Don't download any Videos you are not allowed to download with this Software. Respect the law and the rights of others. It is at your own discretion for what you use the software, therefore I do not assume any liability for any right-wing use of the software.
