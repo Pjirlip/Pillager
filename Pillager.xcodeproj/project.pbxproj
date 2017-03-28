@@ -12,9 +12,9 @@
 		170D9B441E2D46D7009A5394 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170D9B431E2D46D7009A5394 /* TableCell.swift */; };
 		174B4CAD1E89645D00F9600E /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 174B4CAC1E89645D00F9600E /* Credits.html */; };
 		174B4CAF1E89666B00F9600E /* CostumAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B4CAE1E89666B00F9600E /* CostumAboutViewController.swift */; };
-		174B4CB41E89AFA600F9600E /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = 174B4CB31E89AFA600F9600E /* ffmpeg */; };
 		17898AAF1E28FE5600A08339 /* youtube-dl in Resources */ = {isa = PBXBuildFile; fileRef = 17898AAE1E28FE5600A08339 /* youtube-dl */; };
 		17898AB71E292B5800A08339 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17898AB61E292B5800A08339 /* CellData.swift */; };
+		17F2C34D1E8AD350005883E2 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = 17F2C34C1E8AD350005883E2 /* ffmpeg */; };
 		17FE3C941E254A4F007F51E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3C931E254A4F007F51E8 /* AppDelegate.swift */; };
 		17FE3C961E254A4F007F51E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3C951E254A4F007F51E8 /* ViewController.swift */; };
 		17FE3C981E254A4F007F51E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17FE3C971E254A4F007F51E8 /* Assets.xcassets */; };
@@ -27,9 +27,9 @@
 		170D9B431E2D46D7009A5394 /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		174B4CAC1E89645D00F9600E /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		174B4CAE1E89666B00F9600E /* CostumAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostumAboutViewController.swift; sourceTree = "<group>"; };
-		174B4CB31E89AFA600F9600E /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		17898AAE1E28FE5600A08339 /* youtube-dl */ = {isa = PBXFileReference; lastKnownFileType = file; path = "youtube-dl"; sourceTree = "<group>"; };
 		17898AB61E292B5800A08339 /* CellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
+		17F2C34C1E8AD350005883E2 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		17FE3C901E254A4F007F51E8 /* Pillager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pillager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FE3C931E254A4F007F51E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17FE3C951E254A4F007F51E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 		174B4CB01E89A6B000F9600E /* Exec */ = {
 			isa = PBXGroup;
 			children = (
-				174B4CB31E89AFA600F9600E /* ffmpeg */,
+				17F2C34C1E8AD350005883E2 /* ffmpeg */,
 				17898AAE1E28FE5600A08339 /* youtube-dl */,
 			);
 			name = Exec;
@@ -162,7 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				174B4CB41E89AFA600F9600E /* ffmpeg in Resources */,
+				17F2C34D1E8AD350005883E2 /* ffmpeg in Resources */,
 				17FE3C981E254A4F007F51E8 /* Assets.xcassets in Resources */,
 				17898AAF1E28FE5600A08339 /* youtube-dl in Resources */,
 				17FE3C9B1E254A4F007F51E8 /* Main.storyboard in Resources */,
