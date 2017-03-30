@@ -27,7 +27,7 @@ Youtube-dl should be includet in the Package. You don't need to build it yoursel
 </br></br>
 
 ### FFmpeg
-You need to import a compiled version of [FFmpeg](https://ffmpeg.org/) to build the source code. I don't want to ship FFmpeg with my source code because of licence problems, so please accept this workaround. FFmpeg is licenced under [GPLv2](http://www.gnu.de/documents/gpl-2.0.de.html) (or [PGPv3](http://www.gnu.de/documents/gpl.de.html)). I don't own anything about FFpmeg. All copyrights belong to their respective owners. If you want to know more about the licensing of FFmpeg look [here](https://ffmpeg.org/legal.html).
+You need to import a compiled version of [FFmpeg](https://ffmpeg.org/) to build the source code. I don't want to ship FFmpeg with my source code because of licence problems, so please accept this workaround. FFmpeg is licenced under [GPLv2](http://www.gnu.de/documents/gpl-2.0.de.html) (or [PGPv3](http://www.gnu.de/documents/gpl.de.html)). I don't own anything about FFpmeg. All copyrights belong to their respective owners. If you want to know more about the licensing of FFmpeg look [here](https://ffmpeg.org/legal.html). If you wan't to distribute Pillager with FFmpeg includet, then of curse you need to accept their Licence Agreements too!
 </br></br>
 
 
